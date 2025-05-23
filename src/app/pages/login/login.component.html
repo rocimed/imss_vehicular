@@ -1,0 +1,43 @@
+<!-- Login.component.html -->
+<div class="flex items-center justify-center min-h-screen bg-gray-300">
+  <div class="flex bg-white rounded shadow-md w-full max-w-4xl p-20 space-x-10">
+
+    <!-- Formulario -->
+    <form class="w-full max-w-md space-y-5">
+      <!-- Imagen del logo -->
+      <img src="assets/logo.png" alt="ambulancia" class="mb-6 w-1/5 h-auto mx-auto" />
+      <h2 class="text-2xl font-bold mb-2 text-center">Iniciar sesión</h2>
+
+      <div>
+        <label class="block mb-1 text-sm font-medium">Matrícula</label>
+        <input [(ngModel)]="matricula" name="matricula" type="text" required
+          class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:ring-blue-200" />
+      </div>
+
+      <div>
+        <label class="block mb-1 text-sm font-medium">Contraseña</label>
+        <input [(ngModel)]="password" name="password" type="password" required
+          class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:ring-blue-200" />
+      </div>
+
+      <button type="button" (click)="login()"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded transition-colors">
+        Entrar
+      </button>
+
+      <div *ngIf="error" class="text-red-600 text-center">{{ error }}</div>
+    </form>
+
+    <!-- Imagen de ambulancia a la derecha -->
+    <div class="hidden md:flex items-center justify-center w-1/2">
+      <img src="assets/ambulancia.jpg" alt="ambulancia" class="w-full h-auto object-contain" />
+    </div>
+
+  </div>
+</div>
+
+
+    
+    
+
+

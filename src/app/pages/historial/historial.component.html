@@ -1,0 +1,46 @@
+<div class="p-6">
+    <h2 class="text-xl font-semibold mb-4">Historial</h2>
+  
+    <div class="flex gap-4 mb-4">
+      <input
+        type="text"
+        [(ngModel)]="filtroMatricula"
+        placeholder="Buscar por matrícula"
+        class="border rounded px-3 py-1 w-1/2"
+      />
+      <input
+        type="text"
+        [(ngModel)]="filtroFolio"
+        placeholder="Buscar por folio"
+        class="border rounded px-3 py-1 w-1/2"
+      />
+    </div>
+  
+    <table class="min-w-full bg-white rounded shadow">
+      <thead>
+        <tr class="bg-gray-200 text-left">
+          <th class="px-4 py-2">Fecha</th>
+          <th class="px-4 py-2">Folio</th>
+          <th class="px-4 py-2">Operador Matricula</th>
+          <th class="px-4 py-2">Descargar Archivo</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of historialFiltrado()" class="hover:bg-gray-100">
+          <td class="px-4 py-2">{{ item.fecha }}</td>
+          <td class="px-4 py-2">{{ item.usuario }}</td>
+          <td class="px-4 py-2">{{ item.operador }}</td>
+          <td class="px-4 py-2">{{ item.folio }}</td>
+          <td class="px-4 py-2">
+            <a [href]="" download class="text-blue-600 hover:underline">Descargar Pliego</a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+
+ 
+
